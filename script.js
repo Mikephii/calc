@@ -23,6 +23,30 @@ buttonso.forEach(button => {button.addEventListener('click',operator)
 let equals= document.querySelector('#equals');
 equals.addEventListener('click',equalsResult)
 
+
+let clear= document.querySelector('#clear');
+clear.addEventListener('click',cleardata)
+
+let deletor= document.querySelector('#delete');
+deletor.addEventListener('click',deletorfunc)
+
+function deletorfunc(){
+    let displayString = display.textContent
+    if(numberValue){
+        display.textContent=displayString.slice(0,-1);
+    }
+    numberValue = numberValue.slice(0,-1);
+}
+
+function cleardata(){
+    display.textContent=''
+    n1=''
+    n2=''
+    op=''
+    numberValue=''
+}
+
+
 function equalsResult(){
 
     if(n1 && numberValue && op){

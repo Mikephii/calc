@@ -1,4 +1,5 @@
 
+
 let resultValue = '';
 let numberValue = ''
 let n1 = ''
@@ -29,6 +30,9 @@ clear.addEventListener('click',cleardata)
 
 let deletor= document.querySelector('#delete');
 deletor.addEventListener('click',deletorfunc)
+
+
+
 
 function deletorfunc(){
     let displayString = display.textContent
@@ -110,6 +114,9 @@ function operate(n1,n2,argument){
         case '/':
         return divide(n1,n2)
         break;
+        case '^':
+            return exp(n1,n2);
+        break;
     }
 
 }
@@ -133,4 +140,8 @@ function multiply (a,b) {
 function divide (a,b) {
 	
 	return Math.round((a/b)*100)/100;
+}
+
+function exp(a,b){
+    return  Math.round((parseFloat(a,10) ** parseFloat(b,10))*100)/100
 }
